@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  namespace: todo-app
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    certmanager.k8s.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+  name: todo-app-ingress
+spec:
+  rules:
+  - host: todo-app.35.246.136.152.nip.io
+    http:
+      paths:
+      - backend:
+          serviceName: todo-app
+          servicePort: 3000
+        path: /
+  tls:
+  - hosts:
+    - todo-app.35.246.136.152.nip.io
+    secretName: todo-app-tls-cert
+status:
+  loadBalancer: {}
