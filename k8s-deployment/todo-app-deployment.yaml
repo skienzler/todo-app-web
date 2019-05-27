@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: todo-app
-  namespace: todo-app
+  namespace: sk-todo-app
   labels:
     app: todo-app
 spec:
@@ -13,7 +13,7 @@ spec:
   template:
     metadata:
       name: todo-app
-      namespace: todo-app
+      namespace: sk-todo-app
       labels:
         app: todo-app
     spec:

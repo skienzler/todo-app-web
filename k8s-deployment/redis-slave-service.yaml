@@ -2,7 +2,7 @@ kind: "Service"
 apiVersion: "v1"
 metadata:
   name: "redis-slave"
-  namespace: todo-app
+  namespace: sk-todo-app
   labels:
     app: "redis-slave"
 spec:
