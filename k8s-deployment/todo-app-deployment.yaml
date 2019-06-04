@@ -23,7 +23,7 @@ spec:
           name: todo-app-config
       containers:
         - name: "todo-app"
-          image: "johscheuer/todo-app-web:dog"
+          image: "johscheuer/todo-app-web:v6"
           command: ["./todo-app"]
           args: ["-config-file", "/etc/todo-app/redis.config"]
           resources:
